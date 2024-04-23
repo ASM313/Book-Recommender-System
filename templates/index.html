@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: rgb(99, 235, 219);
         }
         .navbar {
             background-color: #333;
@@ -31,6 +32,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin: 10px;
             font-family: Arial, sans-serif;
+            background-color: #f8f4f4;
         }
         .book-image img {
             width: 100%;
@@ -74,15 +76,26 @@
     </div>
     <h1>Top Rated Books</h1>
     <div class="container">
+        <form action="/recommend" method="post">
+            <label for="user_input">Enter the Book name</label>
+            <input type="text" name="user_input" id="user_input">
+            <button type="submit">Recommend</button>
+        </form>
+        {% for item in rec_books %}
+            <li>{{item}}</li>
+        {% endfor %}
+       
         <!-- Books will be listed here -->
-        {% for i in range(book_name| length) %}
+        {% for i in range(book_name|length) %}
             <div class="book-card">
                 <div class="book-image">
-                    <img src="https://via.placeholder.com/200x300" alt="Book Cover">
+                    <img src="{{image[i]}}" alt="Book Cover">
                 </div>
                 <div class="book-info">
-                    <div class="book-title">Book Title</div>
-                    <div class="book-author">Author Name</div>
+                    <div class="book-title">{{book_name[i]}}</div>
+                    <div class="book-author">{{author[i]}}</div>
+                    <h4 class="book-author">Votes - {{votes[i]}}</h4>
+                    <h4 class="book-author">Rating - {{rating[i]}}</h4>
                 </div>
             </div>
             
