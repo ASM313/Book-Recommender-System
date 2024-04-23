@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .book-card {
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px;
+            font-family: Arial, sans-serif;
+        }
+        .book-image img {
+            width: 100%;
+            height: auto;
+        }
+        .book-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .book-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .book-author {
+            font-size: 14px;
+            color: #666;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+         /* Responsive design adjustments */
+         @media (max-width: 600px) {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                padding: 10px;
+            }
+            .navbar {
+                padding: 10px 15px;
+            }
+            .book-title, .book-author {
+                font-size: 14px; /* Slightly smaller font size on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        Book Library
+    </div>
+    <h1>Top Rated Books</h1>
+    <div class="container">
+        <!-- Books will be listed here -->
+        {% for i in range(book_name| length) %}
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="https://via.placeholder.com/200x300" alt="Book Cover">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Book Title</div>
+                    <div class="book-author">Author Name</div>
+                </div>
+            </div>
+            
+        {% endfor %}
+        
+           
+    </div>
+    
+</body>
+</html>

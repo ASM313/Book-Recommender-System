@@ -2,3 +2,5 @@ flask
 numpy
 pandas
 scikit-learn
+dill
+pypi-json==0.4.0
