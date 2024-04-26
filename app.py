@@ -30,6 +30,12 @@ def recommend():
     similiar_books = sorted(list(enumerate(similiarity[idx])), key= lambda x:x[1], reverse=True)[1:6]
     
     for book in similiar_books:
+        # item = []
+        # temp_df = df[df['Book-Title'] == pt.index[book[0]]]
+        # item.extend(list(temp_df.drop_duplicates('Book-Title')['Book-Title'].values))
+        # item.extend(list(temp_df.drop_duplicates('Book-Title')['Book-Author'].values))
+        # item.extend(list(temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values))
+        
         rec_books.append(pt.index[book[0]])
         print(pt.index[book[0]])
 
