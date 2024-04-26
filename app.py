@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import numpy as np
 
-df = pd.read_pickle('popular_books_info.pkl')
-pt = pd.read_pickle('pt.pkl')
-similiarity = pd.read_pickle('similiarity.pkl')
+df = pd.read_pickle('models/popular_books_info.pkl')
+pt = pd.read_pickle('models/pt.pkl')
+similiarity = pd.read_pickle('models/similiarity.pkl')
 
 
 book_name = list(df['Book-Title'])
